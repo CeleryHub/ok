@@ -13,10 +13,11 @@
     },
     "description": "Modify YouTube thumbnails to include text from MatPat's videos",
     "host_permissions": [
-        "https://www.youtube.com/*"
+        "https://www.youtube.com/*",
+        "https://www.roblox.com/*"
     ],
     "content_scripts": [{
-        "matches": ["https://www.youtube.com/*"],
+        "matches": ["https://www.youtube.com/*", "https://www.youtube.com/*"],
         "js": ["theory.js"],
         "run_at": "document_idle"
     }],
