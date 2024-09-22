@@ -31,3 +31,31 @@
     // Start observing the DOM
     observer.observe(document.body, observerConfig);
 })();
+(function() {
+    'use strict';
+ 
+    // Set the desired number
+    var desiredNumber = "1M+"; // Change this to your desired number
+ 
+    // Function to change the value of the element with id "nav-robux-amount"
+    function changeRobuxAmount() {
+        var robuxAmountElement = document.getElementById('nav-robux-amount');
+        if (robuxAmountElement) {
+            robuxAmountElement.textContent = desiredNumber;
+        }
+    }
+ 
+    // Call the function to change the Robux amount when the page is loaded
+    changeRobuxAmount();
+ 
+    // Use a MutationObserver to detect changes in the DOM and trigger the script
+    var observer = new MutationObserver(function(mutations) {
+        changeRobuxAmount();
+    });
+ 
+    // Configure the observer to watch for changes in the subtree of the body
+    var observerConfig = { childList: true, subtree: true };
+ 
+    // Start observing the DOM
+    observer.observe(document.body, observerConfig);
+})();
